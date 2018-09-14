@@ -82,10 +82,10 @@ module.exports = {
       filename: './index.html',
     }),
     new CompressionPlugin({
-      asset: '[path].gz[query]',
+      filename: '[path].gz[query]',
       algorithm: 'gzip',
       test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
+      threshold: 8192,
       minRatio: 0.8,
     }),
     new webpack.NamedModulesPlugin(),
