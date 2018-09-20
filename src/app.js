@@ -1,14 +1,34 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import { injectGlobal } from 'styled-components';
+import styledNormalize from 'styled-normalize';
+import MainPage from 'components/main-page';
 
-const App = ({ appName }) => <div>{appName}</div>;
+const client = new ApolloClient({
+  uri: process.env.LETSEVENTS_GRAPHQL_ENDPOINT,
+});
 
-App.propTypes = {
-  appName: PropTypes.string,
-};
+const injectGlobalStyle = () => injectGlobal`
+  ${styledNormalize}
 
-App.defaultProps = {
-  appName: '',
-};
+  *, *:: before, *:: after { box-sizing: border-box; }
+`;
+
+class App extends React.Component {
+  componentDidMount() {
+    injectGlobalStyle();
+  }
+
+  render() {
+    return (
+      <React.Fragment>
+        <ApolloProvider client={client}>
+          <MainPage />
+        </ApolloProvider>
+      </React.Fragment>
+    );
+  }
+}
 
 export default App;
