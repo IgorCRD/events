@@ -33,18 +33,47 @@ const SearchIcon = styled(Box)`
   margin: -3px 0 0 -3px;
 `;
 
-const SearchBar = ({ input, onChangeCallback }) => (
-  <Flex p="1em" width={[1, 3 / 4, 2 / 3]}>
-    <FlexSearchBar justifyContent="flex-end" p="1em" width={[1]}>
-      <SearchInput value={input} onChange={onChangeCallback} />
-      <SearchIcon is="img" src={searchIconImg} alt="search icon" />
-    </FlexSearchBar>
-  </Flex>
-);
+class SearchBar extends React.Component {
+  static propTypes = {
+    children: PropTypes.func.isRequired,
+  };
 
-SearchBar.propTypes = {
-  input: PropTypes.string.isRequired,
-  onChangeCallback: PropTypes.func.isRequired,
-};
+  state = { value: '' };
+
+  componentDidMount() {
+    if (this.input) {
+      this.input.focus();
+    }
+  }
+
+  onChangeHandler = (event) => {
+    const {
+      target: { value },
+    } = event;
+    this.setState({ value });
+  };
+
+  render() {
+    const { value } = this.state;
+    const { children: childFunction } = this.props;
+    return (
+      <React.Fragment>
+        <Flex p="1em" width={[1, 3 / 4, 2 / 3]}>
+          <FlexSearchBar justifyContent="flex-end" p="1em" width={[1]}>
+            <SearchInput
+              value={value}
+              onChange={this.onChangeHandler}
+              innerRef={(ref) => {
+                this.input = ref;
+              }}
+            />
+            <SearchIcon is="img" src={searchIconImg} alt="search icon" />
+          </FlexSearchBar>
+        </Flex>
+        {childFunction({ searchValue: value })}
+      </React.Fragment>
+    );
+  }
+}
 
 export default SearchBar;

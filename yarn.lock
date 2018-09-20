@@ -5556,6 +5556,13 @@ react-apollo@^2.1.11:
     lodash "^4.17.10"
     prop-types "^15.6.0"
 
+react-debounce-render@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/react-debounce-render/-/react-debounce-render-4.0.3.tgz#ce58026578d73b81f1f990d7c4bfd3fa038b5620"
+  dependencies:
+    lodash "^4.17.10"
+    lodash.debounce "^4.0.8"
+
 react-dom@^16.4.2:
   version "16.5.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.5.1.tgz#29d0c5a01ed3b6b4c14309aa91af6ec4eb4f292c"

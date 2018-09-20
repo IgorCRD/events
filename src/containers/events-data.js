@@ -1,6 +1,7 @@
 import React from 'react';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
+import debounceRender from 'react-debounce-render';
 
 import * as queries from 'src/graphql-queries';
 
@@ -19,7 +20,8 @@ class EventsData extends React.Component {
   state = {
     after: '',
     // TODO: PR to eslint?
-    // eslint bug on rule react/no-unused-state
+    // eslint bug on rule react/no-unused-state does not detect the use of a
+    // state property inside a setState (see nextPage and previousPage handlers)
     /* eslint-disable-next-line react/no-unused-state */
     before: [],
   };
@@ -58,4 +60,4 @@ class EventsData extends React.Component {
   }
 }
 
-export default EventsData;
+export default debounceRender(EventsData, 400);
