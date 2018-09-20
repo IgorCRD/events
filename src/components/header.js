@@ -5,7 +5,7 @@ import heroImg from 'assets/images/show-hero.png';
 
 const HeroImage = styled.img`
   object-fit: cover;
-  object-position: top center;
+  object-position: bottom center;
   height: 40vh;
 `;
 
