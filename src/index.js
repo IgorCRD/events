@@ -4,4 +4,4 @@ import App from './app';
 
 const root = document.getElementById('app');
 
-ReactDOM.render(<App appName="Lets events" />, root);
+ReactDOM.render(<App />, root);

@@ -60,10 +60,13 @@
     "express": "^4.16.3",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
+    "grid-styled": "^5.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-apollo": "^2.1.11",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "styled-components": "^3.4.9",
+    "styled-normalize": "^8.0.1"
   },
   "scripts": {
     "start": "node server.js",
