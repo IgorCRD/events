@@ -2839,7 +2839,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.16, fbjs@^0.8.5:
+fbjs@^0.8.16, fbjs@^0.8.5, fbjs@^0.8.9:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   dependencies:
@@ -3304,6 +3304,10 @@ hmac-drbg@^1.0.0:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
+
+hoist-non-react-statics@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
 hoist-non-react-statics@^2.5.0:
   version "2.5.5"
@@ -5413,7 +5417,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   dependencies:
@@ -5872,6 +5876,10 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+round-to@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/round-to/-/round-to-3.0.0.tgz#f457177d68e5a1d9d55796528cd03daea0bb4fb9"
 
 rsvp@^3.3.3:
   version "3.6.2"
@@ -6366,6 +6374,19 @@ strip-json-comments@^2.0.1, strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
+styled-components@^2.4.0:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.4.1.tgz#663bd0485d4b6ab46f946210dc03d2398d1ade74"
+  dependencies:
+    buffer "^5.0.3"
+    css-to-react-native "^2.0.3"
+    fbjs "^0.8.9"
+    hoist-non-react-statics "^1.2.0"
+    is-plain-object "^2.0.1"
+    prop-types "^15.5.4"
+    stylis "^3.4.0"
+    supports-color "^3.2.3"
+
 styled-components@^3.4.9:
   version "3.4.9"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.4.9.tgz#519abeb351b37be5b7de6a15ff9e4efeb9d772da"
@@ -6384,6 +6405,14 @@ styled-normalize@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-8.0.1.tgz#f1c390de61075cdcc45ae38a1c8c381c5667a0af"
 
+styled-spinkit@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/styled-spinkit/-/styled-spinkit-0.4.0.tgz#e0a9e970e881b21c4d22c09875667d206abaf98c"
+  dependencies:
+    prop-types "^15.6.1"
+    round-to "^3.0.0"
+    styled-components "^2.4.0"
+
 styled-system@^3.0.1:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-3.1.4.tgz#d3cc0cfea91273c39f06af5eaaaa2decf84506c0"
@@ -6394,7 +6423,7 @@ stylis-rule-sheet@^0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/stylis-rule-sheet/-/stylis-rule-sheet-0.0.10.tgz#44e64a2b076643f4b52e5ff71efc04d8c3c4a430"
 
-stylis@^3.5.0:
+stylis@^3.4.0, stylis@^3.5.0:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.5.3.tgz#99fdc46afba6af4deff570825994181a5e6ce546"
 

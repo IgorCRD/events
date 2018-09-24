@@ -19,10 +19,6 @@ class EventsData extends React.Component {
 
   state = {
     after: '',
-    // TODO: PR to eslint?
-    // eslint bug on rule react/no-unused-state does not detect the use of a
-    // state property inside a setState (see nextPage and previousPage handlers)
-    /* eslint-disable-next-line react/no-unused-state */
     before: [],
   };
 
@@ -42,17 +38,23 @@ class EventsData extends React.Component {
 
   render() {
     const { children: childFunction, search, first } = this.props;
-    const { after } = this.state;
+    const { after, before } = this.state;
     return (
       <Query query={queries.searchEventQuery.query} variables={{ search, first, after }}>
-        {({ loading, error, data }) => childFunction({
+        {({
+          loading, error, data, refetch: retry,
+        }) => childFunction({
           loading,
           error,
           data,
-          nextPage: () => {
-            this.nextPage(data.events.pageInfo.endCursor);
-          },
-          previousPage: this.previousPage,
+          retry,
+          nextPage:
+              data.events && data.events.pageInfo.hasNextPage
+                ? () => {
+                  this.nextPage(data.events.pageInfo.endCursor);
+                }
+                : null,
+          previousPage: before.length !== 0 ? this.previousPage : null,
         })
         }
       </Query>
