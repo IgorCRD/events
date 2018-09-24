@@ -19,6 +19,7 @@ const Event = ({ name, pic }) => (
         <span
           style={{
             padding: '1em',
+            maxWidth: '280px',
           }}
         >
           {name}
