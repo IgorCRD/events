@@ -56,9 +56,9 @@ export const searchEventQuery = {
 export const eventsDataQuery = {
   operationName: 'eventOffer',
   variables: null,
-  query: gql`
+  query: id => gql`
     query eventOffer {
-      event_offer(id: "lets-react-the-grand-tournament") {
+      event_offer(id: "${id}") {
         id
         name
         description
