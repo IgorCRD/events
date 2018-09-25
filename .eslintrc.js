@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/no-did-mount-set-state': [false],
+    'react/forbid-foreign-prop-types': [false],
   },
   extends: ['airbnb', 'plugin:react/recommended'],
   env: {

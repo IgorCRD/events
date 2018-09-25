@@ -55,6 +55,7 @@
     "whatwg-fetch": "^3.0.0"
   },
   "dependencies": {
+    "@reach/router": "^1.2.0",
     "apollo-boost": "^0.1.16",
     "cors": "^2.8.4",
     "express": "^4.16.3",

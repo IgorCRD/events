@@ -32,7 +32,12 @@ const EventsList = ({ events }) => {
       >
         {eventRow
           && eventRow.map(event => (
-            <EventBox key={event.id} id={event.id} name={event.name} pic={event.photo.small_url} />
+            <EventBox
+              key={event.id}
+              id={event.slug}
+              name={event.name}
+              pic={event.photo.small_url}
+            />
           ))}
       </Flex>
     ))

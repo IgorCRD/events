@@ -31,8 +31,9 @@ const moveOut = keyframes`
 `;
 
 const FlexModalBox = styled.div`
-  display: Flex;
-  background: white;
+  overflow-y: auto;
+  background-color: #2f343b;
+  box-shadow: inset 0 5px 25px 0 rgba(0, 0, 0, 0.75);
   height: 100%;
   width: 100%;
   animation: ${props => (props.animationState === 'openning' ? moveIn : moveOut)} 0.5s;
@@ -52,12 +53,12 @@ class Modal extends React.Component {
     animationState: 'openning',
   };
 
-  handleMoveOut = (onOutCallback) => {
+  handleMoveOut = (closeModalCallback) => {
     const { right } = this.modal.getBoundingClientRect();
     if (right > 2) {
-      window.requestAnimationFrame(() => this.handleMoveOut(onOutCallback));
+      window.requestAnimationFrame(() => this.handleMoveOut(closeModalCallback));
     } else {
-      onOutCallback();
+      closeModalCallback();
     }
   };
 
@@ -82,11 +83,7 @@ class Modal extends React.Component {
     const { animationState } = this.state;
     return (
       <FullShadow onClick={this.handleCloseModalCallback}>
-        <Box
-          width={[4 / 5, 4 / 5, 3 / 5]}
-          style={{ height: '100%' }}
-          onClick={this.handleClickPropagation}
-        >
+        <Box width={[4 / 5]} style={{ height: '100%' }} onClick={this.handleClickPropagation}>
           <FlexModalBox innerRef={this.handleRef} animationState={animationState}>
             {children}
           </FlexModalBox>
