@@ -35,3 +35,19 @@ All configuration needed for deploying it to heroku is already made. So all you 
 6. "It's alive!"
 
 PS.: The above steps assume you have the Heroku CLI installed and logged on your machine
+
+### Análise da solução
+
+#### Características positivas da solução proposta
+
+1. Os containers que fazem o fetch de dados foram implementados de forma a isolar a camada de dados. O restante do front não conhece ou assume o uso de qualquer tecnologia. Dessa forma é possível mudar o graphql client ou até mesmo passar a usar endpoints rest apenas mudando o código do container. Eles também são implementados usando render props para desacoplar ainda mais a camada de dados dos components de apresentação;
+2. Os componentes que fazem fetch de dados tem seu render method debounced de forma que rapidas mudanças de props ou state não geram excesso de requisições para o backend;
+3. Maior parte dos components não faz utilização de state ou de lifecicle methods o que facilita muito a manutenibilidade dos components.
+
+#### Potenciais melhorias
+
+1. Por conta do rush final para alcançar a deadline alguns presentational components acabaram misturando styles e state. Isso fere o princípio de single responsability, o que prejudica a manutenibilidade do código e um refactory é necessário nesses componenetes;
+2. Escrever mais testes e adotar um abordagem mais orientada a teste. Isso iria melhorar a qualidade do código, da aplicação e das APIs criadas para cada componente;
+3. Criar query string na rota da aplicação para mostrar a ultima busca feita na barra. A intenção é permitir o compartilhamento de resultados de buscas a partir do compartilhamento da URL. Assim como já é feito com o modal de compra de ingressos;
+4. Pequenos detalhes de estilo espalhados por toda a aplicação;
+5. Criação de um tema para melhor padronização de estilos como fonts, cores, font-sizes e etc.
